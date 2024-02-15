@@ -1,9 +1,11 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace MyrtexTest.Application.Model.Request;
 
 // todo: что такое record-ы ???
 public record CreateEmployeeRequest(
-    string Department,
-    string FullName,
-    DateOnly BirthDate,
-    DateOnly EmploymentDate,
-    decimal Salary);
+    [Required] string Department,
+    [Required] string FullName,
+    [Required] DateOnly BirthDate,
+    [Required] DateOnly EmploymentDate,
+    [Required] decimal Salary);

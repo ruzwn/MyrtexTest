@@ -33,6 +33,8 @@ public class EmployeeRepository : IRepository<Employee>
         var result = await Employees
             .Where(x => ids.Contains(x.Id))
             .ToListAsync(cancellationToken);
+
+        return result;
     }
 
     public async Task AddAsync(Employee entity, CancellationToken cancellationToken)
