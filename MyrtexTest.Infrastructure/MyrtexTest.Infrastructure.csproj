@@ -7,12 +7,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Repository\" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
-      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.0" />
+      <ProjectReference Include="..\MyrtexTest.Application\MyrtexTest.Application.csproj" />
+      <ProjectReference Include="..\MyrtexTest.Domain\MyrtexTest.Domain.csproj" />
     </ItemGroup>
 
 </Project>

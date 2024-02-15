@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using MyrtexTest.Domain.Model;
 
 namespace MyrtexTest.Infrastructure.Database;
 
@@ -9,4 +10,6 @@ public sealed class MyrtexDbContext : DbContext
     {
         Database.EnsureCreated();
     }
+
+    public DbSet<Employee> Employees { get; set; }
 }
