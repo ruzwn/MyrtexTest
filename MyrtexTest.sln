@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyrtexTest.Api", "MyrtexTest.Api\MyrtexTest.Api.csproj", "{A1F4A28B-8A57-40CE-A9B9-91129DBCEC6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyrtexTest.Infrastructure", "MyrtexTest.Infrastructure\MyrtexTest.Infrastructure.csproj", "{E43CF6B3-6616-41CE-9316-57AB80D8ADF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyrtexTest.Domain", "MyrtexTest.Domain\MyrtexTest.Domain.csproj", "{A279A829-AAA9-45E1-A056-D5C5CF0CF6E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyrtexTest.Application", "MyrtexTest.Application\MyrtexTest.Application.csproj", "{6AB5EEE0-08FE-4161-A366-20F56230C0A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1F4A28B-8A57-40CE-A9B9-91129DBCEC6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1F4A28B-8A57-40CE-A9B9-91129DBCEC6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1F4A28B-8A57-40CE-A9B9-91129DBCEC6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1F4A28B-8A57-40CE-A9B9-91129DBCEC6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E43CF6B3-6616-41CE-9316-57AB80D8ADF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E43CF6B3-6616-41CE-9316-57AB80D8ADF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E43CF6B3-6616-41CE-9316-57AB80D8ADF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E43CF6B3-6616-41CE-9316-57AB80D8ADF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A279A829-AAA9-45E1-A056-D5C5CF0CF6E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A279A829-AAA9-45E1-A056-D5C5CF0CF6E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A279A829-AAA9-45E1-A056-D5C5CF0CF6E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A279A829-AAA9-45E1-A056-D5C5CF0CF6E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AB5EEE0-08FE-4161-A366-20F56230C0A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AB5EEE0-08FE-4161-A366-20F56230C0A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AB5EEE0-08FE-4161-A366-20F56230C0A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AB5EEE0-08FE-4161-A366-20F56230C0A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
