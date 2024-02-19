@@ -1,11 +1,11 @@
-using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace MyrtexTest.Application.Model.Request;
 
 public record UpdateEmployeeRequest(
-    [Required] Guid Id,
-    [Required] string Department,
-    [Required] string FullName,
-    [Required] DateOnly BirthDate,
-    [Required] DateOnly EmploymentDate,
-    [Required] decimal Salary);
+    [BindRequired] Guid Id,
+    [BindRequired] string Department,
+    [BindRequired] string FullName,
+    [BindRequired] DateOnly BirthDate,
+    [BindRequired] DateOnly EmploymentDate,
+    [BindRequired] decimal Salary);

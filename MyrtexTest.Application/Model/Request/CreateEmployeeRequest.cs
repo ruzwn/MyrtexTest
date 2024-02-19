@@ -1,11 +1,11 @@
-using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace MyrtexTest.Application.Model.Request;
 
 // todo: что такое record-ы ???
 public record CreateEmployeeRequest(
-    [Required] string Department,
-    [Required] string FullName,
-    [Required] DateOnly BirthDate,
-    [Required] DateOnly EmploymentDate,
-    [Required] decimal Salary);
+    [BindRequired] string Department,
+    [BindRequired] string FullName,
+    [BindRequired] DateOnly BirthDate,
+    [BindRequired] DateOnly EmploymentDate,
+    [BindRequired] decimal Salary);

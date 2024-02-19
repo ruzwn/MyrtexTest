@@ -18,7 +18,7 @@ public class EmployeeRepository : IRepository<Employee>
     public async Task<Employee> GetOneAsync(Guid id, CancellationToken cancellationToken)
     {
         // todo: First or Single? "==" or Equals?
-        var result = await Employees.SingleOrDefaultAsync(x => x.Id == id, cancellationToken);
+        Employee? result = await Employees.SingleOrDefaultAsync(x => x.Id == id, cancellationToken);
         if (result is null)
         {
             throw new Exception(); // todo:
@@ -27,35 +27,45 @@ public class EmployeeRepository : IRepository<Employee>
         return result;
     }
 
-    public async Task<IList<Employee>> GetManyAsync(IReadOnlyCollection<Guid> ids, CancellationToken cancellationToken)
+    public async Task<IList<Employee>> GetManyAsync(ICollection<Guid> ids, CancellationToken cancellationToken)
     {
         // todo: what is .ToLookup? return Dictionary<Guid, Employee> ??? 
-        var result = await Employees
+        List<Employee> result = await Employees
             .Where(x => ids.Contains(x.Id))
             .ToListAsync(cancellationToken);
 
         return result;
     }
 
-    public async Task AddAsync(Employee entity, CancellationToken cancellationToken)
+    public async Task<IList<Employee>> GetAllAsync(CancellationToken cancellationToken)
     {
-        await Employees.AddAsync(entity, cancellationToken); // todo: or use "Add" (read AddAsync documentation) 
+        List<Employee> result = await Employees.ToListAsync(cancellationToken);
+
+        return result;
     }
 
-    public Task UpdateAsync(Employee entity, CancellationToken cancellationToken)
+    public async Task AddAsync(Employee entity, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        await Employees.AddAsync(entity, cancellationToken); // todo: or use "Add" (read AddAsync documentation)
+        await _dbContext.SaveChangesAsync(cancellationToken);
+    }
+
+    public async Task UpdateAsync(Employee entity, CancellationToken cancellationToken)
+    {
+        Employees.Update(entity);
+        await _dbContext.SaveChangesAsync(cancellationToken);
     }
 
     public async Task DeleteAsync(Guid id, CancellationToken cancellationToken)
     {
         // todo: First or Single? "==" or Equals?
-        var employee = await Employees.SingleOrDefaultAsync(x => x.Id == id, cancellationToken);
+        Employee? employee = await Employees.SingleOrDefaultAsync(x => x.Id == id, cancellationToken);
         if (employee is null)
         {
             throw new Exception(); // todo:
         }
 
         Employees.Remove(employee);
+        await _dbContext.SaveChangesAsync(cancellationToken);
     }
 }

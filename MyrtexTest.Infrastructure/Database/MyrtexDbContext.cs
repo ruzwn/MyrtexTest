@@ -11,5 +11,13 @@ public sealed class MyrtexDbContext : DbContext
         Database.EnsureCreated();
     }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        // todo: all is ok ???
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(MyrtexDbContext).Assembly);
+    }
+
     public DbSet<Employee> Employees { get; set; }
 }

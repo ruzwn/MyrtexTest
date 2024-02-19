@@ -1,4 +1,5 @@
-using MyrtexTest.Infrastructure.Database;
+using MyrtexTest.Application;
+using MyrtexTest.Infrastructure;
 
 namespace MyrtexTest.Api;
 
@@ -8,8 +9,8 @@ public class Program
     {
         WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
-        builder.Services.AddMyrtexDbContext(builder.Configuration);
+        builder.Services.AddApplication();
+        builder.Services.AddInfrastructure(builder.Configuration);
 
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

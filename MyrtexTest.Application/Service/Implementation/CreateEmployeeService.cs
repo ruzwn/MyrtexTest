@@ -9,7 +9,8 @@ public class CreateEmployeeService : IService<CreateEmployeeRequest, Guid>
 {
     private readonly IRepository<Employee> _employeeRepository;
 
-    public CreateEmployeeService(IRepository<Employee> employeeRepository) // todo: add log and validation?
+    // todo: add log and validation?
+    public CreateEmployeeService(IRepository<Employee> employeeRepository)
     {
         _employeeRepository = employeeRepository;
     }
